@@ -57,7 +57,7 @@ class Maze():
         self._draw_cell(self.__num_cols - 1, self.__num_rows - 1)
     
     def _break_walls_r(self, i, j):
-        print(f"i: {i}, j: {j}")
+        #print(f"i: {i}, j: {j}")
         self._cells[i][j].visited = True
         while(True):
             to_visit = []
@@ -77,35 +77,35 @@ class Maze():
             
             if not to_visit:
                 self._draw_cell(i, j)
-                print("RETURNING")
+                #print("RETURNING")
                 return
 
             direction_index = random.randint(0, 1000)  % len(to_visit)
             direction = to_visit[direction_index]
             next_cell = self._cells[direction[0]][direction[1]]
 
-            print(f"CURRENT CELL: {i}, {j} ..... NEXT CELL: {direction[0]}, {direction[1]}")
+            #print(f"CURRENT CELL: {i}, {j} ..... NEXT CELL: {direction[0]}, {direction[1]}")
 
             if i < direction[0]:
-                print("Going right")
+                #print("Going right")
                 self._cells[i][j].has_right_wall = False
                 self._draw_cell(i,j)
                 next_cell.has_left_wall = False
                 self._draw_cell(direction[0],direction[1])
             if i > direction[0]:
-                print("Going left")
+                #print("Going left")
                 self._cells[i][j].has_left_wall = False
                 self._draw_cell(i,j)
                 next_cell.has_right_wall = False
                 self._draw_cell(direction[0],direction[1])
             if j < direction[1]:
-                print("Going down")
+                #print("Going down")
                 self._cells[i][j].has_bottom_wall = False
                 self._draw_cell(i,j)
                 next_cell.has_top_wall = False
                 self._draw_cell(direction[0],direction[1])
             if j > direction[1]:
-                print("Going up")
+                #print("Going up")
                 self._cells[i][j].has_top_wall = False
                 self._draw_cell(i,j)
                 next_cell.has_bottom_wall = False
