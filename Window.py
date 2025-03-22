@@ -53,6 +53,7 @@ class Cell():
         self.__x2 = None
         self.__y2 = None
         self.__win = window
+        self.visited = False
 
     def draw(self, top_left_x, top_left_y, bottom_right_x, bottom_right_y, color="black"):
         if self.__win == None:
@@ -79,7 +80,7 @@ class Cell():
         if self.has_top_wall == True:
             self.__win.draw_line(top_line,color)
         else:
-            print("HERE")
+            #print("HERE")
             self.__win.draw_line(top_line, "white")
         if self.has_bottom_wall == True:
             self.__win.draw_line(bottom_line,color)

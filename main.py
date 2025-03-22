@@ -32,10 +32,12 @@ def main():
     cell3.draw()
     cell1.draw_move(cell3,True) """
     
-    Mazeee = Maze(100,100, 5, 5, 50, 50, win)
+    Mazeee = Maze(100,100, 5, 7, 50, 50, win, 5)
     Mazeee._break_entrance_and_exit()
     #win.draw_line(Line1, "red")
-
+    Mazeee._break_walls_r(0,0)
+    Mazeee._reset_cells_visited()
+    Mazeee.solve()
 
 
     win.wait_for_close()
